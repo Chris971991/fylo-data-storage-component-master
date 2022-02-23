@@ -1,0 +1,200 @@
+// Font Import
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+// Colors
+$paleBlue: hsl(243, 100%, 93%);
+$greyishBlue: hsl(229, 7%, 55%);
+$darkBlue: hsl(228, 56%, 26%);
+$veryDarkBlue: hsl(229, 57%, 11%);
+$black: hsl(0.64, 0.57%, 0.11%);
+
+// CSS Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Font & Background
+body {
+  height: 100vh;
+  font-family: "Raleway", sans-serif;
+  background-color: $veryDarkBlue;
+  // Desktop Background
+  background-image: url(../images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  background-position: center bottom;
+
+  //Mobile Background
+  @media (max-width: 768px) {
+    background-image: url(../images/bg-mobile.png);
+  }
+}
+
+// Font Styles
+.heading-xl {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.heading-l {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1px;
+}
+
+.heading-m {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.heading-s {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+// Font Colors
+
+.text-white {
+  color: $paleBlue;
+}
+
+.text-black {
+  color: $black;
+}
+
+// Utilities
+
+.bg {
+  background-color: $darkBlue;
+  box-shadow: 0px 75px 100px -30px rgba(0, 0, 0, 0.24776);
+}
+
+.center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Main Styling
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.875rem;
+}
+
+.menu {
+  padding: 2.5rem 8.3125rem 2.5rem 2.5rem;
+  border-radius: 0.625rem 6.25rem 0.625rem 0.625rem;
+  &-btns {
+    margin-top: 2.0625rem;
+    display: grid;
+    width: 11rem;
+    height: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  &-btn {
+    background-color: $veryDarkBlue;
+    border-radius: 0.625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__icon {
+    }
+  }
+}
+
+.info {
+  width: 33.75rem;
+  height: 9.625rem;
+  border-radius: 0.625rem;
+  padding: 2.5rem;
+  align-self: flex-end;
+  position: relative;
+
+  &-heading {
+    margin-bottom: 1rem;
+  }
+}
+
+@keyframes progressAnimationStrike {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.progress2 {
+  width: 28.6875rem;
+  height: 1.25rem;
+  padding: 0.1875rem;
+  border-radius: 0.625rem;
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25),
+    0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar2 {
+  height: 0.875rem;
+  border-radius: 30px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.05)
+  );
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+
+  &--indicator {
+    height: 0.625rem;
+    width: 0.625rem;
+    border-radius: 30px;
+    background-color: white;
+    float: right;
+    position: relative;
+    top: 11%;
+    right: 1%;
+  }
+}
+
+.progress-moved .progress-bar2 {
+  width: 70%;
+  background-color: #ef476f;
+  animation: progressAnimation 1.5s;
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 5%;
+    background-color: #f9bcca;
+  }
+  100% {
+    width: 70%;
+    background-color: #ef476f;
+  }
+}
+
+.progress-desc {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}

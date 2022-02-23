@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: "Raleway", sans-serif;
+  background-color: #0c122c;
+  background-image: url(../images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  background-position: center bottom;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url(../images/bg-mobile.png);
+  }
+}
+
+.heading-xl {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.heading-l {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1px;
+}
+
+.heading-m {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.heading-m span {
+  font-weight: bold;
+}
+
+.heading-s {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.text-white {
+  color: #dddbff;
+}
+
+.text-black {
+  color: black;
+}
+
+.bg {
+  background-color: #1d2c67;
+  -webkit-box-shadow: 0px 75px 100px -30px rgba(0, 0, 0, 0.24776);
+          box-shadow: 0px 75px 100px -30px rgba(0, 0, 0, 0.24776);
+}
+
+.center {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.875rem;
+}
+
+.menu {
+  padding: 2.5rem 8.3125rem 2.5rem 2.5rem;
+  border-radius: 0.625rem 6.25rem 0.625rem 0.625rem;
+}
+
+.menu-btns {
+  margin-top: 2.0625rem;
+  display: -ms-grid;
+  display: grid;
+  width: 11rem;
+  height: 3rem;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.menu-btn {
+  background-color: #0c122c;
+  border-radius: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info {
+  width: 33.75rem;
+  height: 9.625rem;
+  border-radius: 0.625rem;
+  padding: 2.5rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  position: relative;
+}
+
+.info-heading {
+  margin-bottom: 1rem;
+}
+
+@-webkit-keyframes progressAnimationStrike {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes progressAnimationStrike {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.progress2 {
+  width: 28.6875rem;
+  height: 1.25rem;
+  padding: 0.1875rem;
+  border-radius: 0.625rem;
+  background: rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar2 {
+  height: 0.875rem;
+  border-radius: 30px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.05)));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+  -webkit-transition-property: width, background-color;
+  transition-property: width, background-color;
+}
+
+.progress-bar2--indicator {
+  height: 0.625rem;
+  width: 0.625rem;
+  border-radius: 30px;
+  background-color: white;
+  float: right;
+  position: relative;
+  top: 11%;
+  right: 1%;
+}
+
+.progress-moved .progress-bar2 {
+  width: 70%;
+  background-color: #ef476f;
+  -webkit-animation: progressAnimation 1.5s;
+          animation: progressAnimation 1.5s;
+}
+
+@-webkit-keyframes progressAnimation {
+  0% {
+    width: 5%;
+    background-color: #f9bcca;
+  }
+  100% {
+    width: 70%;
+    background-color: #ef476f;
+  }
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 5%;
+    background-color: #f9bcca;
+  }
+  100% {
+    width: 70%;
+    background-color: #ef476f;
+  }
+}
+
+.progress-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 0.5rem;
+}
+/*# sourceMappingURL=app.css.map */
