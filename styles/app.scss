@@ -1,14 +1,14 @@
-// Font Import
+//Font Import
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 
-// Colors
+//Colors
 $paleBlue: hsl(243, 100%, 93%);
 $greyishBlue: hsl(229, 7%, 55%);
 $darkBlue: hsl(228, 56%, 26%);
 $veryDarkBlue: hsl(229, 57%, 11%);
 $black: hsl(0.64, 0.57%, 0.11%);
 
-// CSS Reset
+//CSS Reset
 *,
 *::before,
 *::after {
@@ -17,7 +17,7 @@ $black: hsl(0.64, 0.57%, 0.11%);
   padding: 0;
 }
 
-// Font Declaration
+//Font Declaration
 body,
 h1,
 h2,
@@ -25,35 +25,34 @@ span {
   font-family: "Raleway", sans-serif;
 }
 
-// Background
+//Background
 body {
   height: 100vh;
   background-color: $veryDarkBlue;
-  // Desktop Background
   background-image: url(../images/bg-desktop.png);
   background-repeat: no-repeat;
   background-size: 100% 50%;
   background-position: center bottom;
 }
 
-// Font Styles
+//Font Styles
 .heading-xl {
   font-weight: bold;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .heading-l {
   font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 1px;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  letter-spacing: 0.0625rem;
 }
 
 .heading-m {
   font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 0.875rem;
+  line-height: 1rem;
 
   span {
     font-weight: bold;
@@ -62,12 +61,11 @@ body {
 
 .heading-s {
   font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
 }
 
-// Font Colors
-
+//Font Colors
 .text-white {
   color: $paleBlue;
 }
@@ -76,11 +74,10 @@ body {
   color: $black;
 }
 
-// Utilities
-
+//Utilities
 .bg {
   background-color: $darkBlue;
-  box-shadow: 0px 75px 100px -30px rgba(0, 0, 0, 0.24776);
+  box-shadow: 0 4.6875rem 6.25rem -1.875rem rgba(0, 0, 0, 0.24776);
 }
 
 .center {
@@ -90,18 +87,29 @@ body {
   align-items: center;
 }
 
-// Main Styling
-
+//Main Styling
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.875rem;
+  margin-inline: 1.5625rem;
+  width: 57.5rem;
+  height: 12.5625rem;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 2.9375rem auto auto;
+  grid-template-areas:
+    "a b"
+    "a b"
+    "a b";
+  column-gap: 1.875rem;
 }
 
+//Logo + Menu
 .menu {
-  padding: 2.5rem 8.3125rem 2.5rem 2.5rem;
+  grid-column: 1 / 2;
+  grid-row: 1/4;
+  max-width: 21.875rem;
+  padding: 2.5rem;
   border-radius: 0.625rem 6.25rem 0.625rem 0.625rem;
+
   &-btns {
     margin-top: 2.0625rem;
     display: grid;
@@ -117,19 +125,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.2s ease-in-out;
+  }
 
-    &__icon {
-    }
+  &-btn:hover {
+    background-color: hsla(229, 57%, 11%, 0.5);
+    box-shadow: 0rem 0rem 0.2rem rgba(0, 0, 0, 0.7);
   }
 }
 
+//Download info
 .info {
-  width: 33.75rem;
-  height: 9.625rem;
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
   border-radius: 0.625rem;
   padding: 2.5rem;
   align-self: flex-end;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   &-heading {
     margin-bottom: 1rem;
@@ -152,35 +167,41 @@ body {
 
 .limit-bottom-right:before {
   content: "";
-  width: 0px;
-  height: 0px;
   position: absolute;
-  border-right: 13px solid #fff;
-  border-left: 9px solid transparent;
-  border-top: 10px solid #fff;
-  border-bottom: 12px solid transparent;
+  border-right: 0.8125rem solid #fff;
+  border-left: 0.5625rem solid transparent;
+  border-top: 0.625rem solid #fff;
+  border-bottom: 0.75rem solid transparent;
   right: 0;
-  top: 70px;
+  top: 4.375rem;
 }
 
+//Remove speech bubble corner on mobile devices
+@media (max-width: 675px) {
+  .limit-bottom-right:before {
+    display: none;
+  }
+}
+
+//Progress bar
 .progress2 {
-  width: 28.6875rem;
+  max-width: 28.6875rem;
   height: 1.25rem;
   padding: 0.1875rem;
   border-radius: 0.625rem;
   background: hsla(229, 57%, 11%, 0.5);
 }
 
-.progress-bar2 {
+.progress-bar {
   height: 0.875rem;
-  border-radius: 30px;
+  border-radius: 1.875rem;
   transition: 0.4s linear;
   transition-property: width, background-color;
 
   &--indicator {
     height: 0.625rem;
     width: 0.625rem;
-    border-radius: 30px;
+    border-radius: 50%;
     background-color: white;
     float: right;
     position: relative;
@@ -189,7 +210,7 @@ body {
   }
 }
 
-.progress-moved .progress-bar2 {
+.progress-moved .progress-bar {
   width: 75%;
   background: linear-gradient(90deg, #ffa197 0%, #ff4a95 100%);
   animation: progressAnimation 1.5s;
@@ -206,8 +227,55 @@ body {
   }
 }
 
+//Progress download info
 .progress-desc {
   display: flex;
   justify-content: space-between;
   margin-top: 0.5rem;
+}
+
+//Smaller Devices
+@media (max-width: 675px) {
+  body {
+    background-image: url(../images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 20.375rem;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .info {
+    text-align: center;
+    align-self: center;
+    width: 100%;
+    padding: 2rem 2rem 3.25rem 2rem;
+
+    &-limit {
+      top: 7.65rem;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      border-radius: 0.625rem;
+      max-width: 11.1875rem;
+    }
+
+    @media (max-width: 345px) {
+      &-limit {
+        top: 8.65rem;
+      }
+    }
+  }
 }

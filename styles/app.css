@@ -26,21 +26,21 @@ body {
 
 .heading-xl {
   font-weight: bold;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .heading-l {
   font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 1px;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  letter-spacing: 0.0625rem;
 }
 
 .heading-m {
   font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 0.875rem;
+  line-height: 1rem;
 }
 
 .heading-m span {
@@ -49,8 +49,8 @@ body {
 
 .heading-s {
   font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
 }
 
 .text-white {
@@ -63,8 +63,8 @@ body {
 
 .bg {
   background-color: #1d2c67;
-  -webkit-box-shadow: 0px 75px 100px -30px rgba(0, 0, 0, 0.24776);
-          box-shadow: 0px 75px 100px -30px rgba(0, 0, 0, 0.24776);
+  -webkit-box-shadow: 0 4.6875rem 6.25rem -1.875rem rgba(0, 0, 0, 0.24776);
+          box-shadow: 0 4.6875rem 6.25rem -1.875rem rgba(0, 0, 0, 0.24776);
 }
 
 .center {
@@ -81,20 +81,29 @@ body {
 }
 
 .main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 1.875rem;
+  margin-inline: 1.5625rem;
+  width: 57.5rem;
+  height: 12.5625rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 3fr;
+      grid-template-columns: 2fr 3fr;
+  -ms-grid-rows: 2.9375rem auto auto;
+      grid-template-rows: 2.9375rem auto auto;
+      grid-template-areas: "a b" "a b" "a b";
+  -webkit-column-gap: 1.875rem;
+          column-gap: 1.875rem;
 }
 
 .menu {
-  padding: 2.5rem 8.3125rem 2.5rem 2.5rem;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1/4;
+  max-width: 21.875rem;
+  padding: 2.5rem;
   border-radius: 0.625rem 6.25rem 0.625rem 0.625rem;
 }
 
@@ -121,16 +130,38 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.menu-btn:hover {
+  background-color: rgba(12, 18, 44, 0.5);
+  -webkit-box-shadow: 0rem 0rem 0.2rem rgba(0, 0, 0, 0.7);
+          box-shadow: 0rem 0rem 0.2rem rgba(0, 0, 0, 0.7);
 }
 
 .info {
-  width: 33.75rem;
-  height: 9.625rem;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1 / 4;
   border-radius: 0.625rem;
   padding: 2.5rem;
   -ms-flex-item-align: end;
       align-self: flex-end;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .info-heading {
@@ -159,38 +190,42 @@ body {
 
 .limit-bottom-right:before {
   content: "";
-  width: 0px;
-  height: 0px;
   position: absolute;
-  border-right: 13px solid #fff;
-  border-left: 9px solid transparent;
-  border-top: 10px solid #fff;
-  border-bottom: 12px solid transparent;
+  border-right: 0.8125rem solid #fff;
+  border-left: 0.5625rem solid transparent;
+  border-top: 0.625rem solid #fff;
+  border-bottom: 0.75rem solid transparent;
   right: 0;
-  top: 70px;
+  top: 4.375rem;
+}
+
+@media (max-width: 675px) {
+  .limit-bottom-right:before {
+    display: none;
+  }
 }
 
 .progress2 {
-  width: 28.6875rem;
+  max-width: 28.6875rem;
   height: 1.25rem;
   padding: 0.1875rem;
   border-radius: 0.625rem;
   background: rgba(12, 18, 44, 0.5);
 }
 
-.progress-bar2 {
+.progress-bar {
   height: 0.875rem;
-  border-radius: 30px;
+  border-radius: 1.875rem;
   -webkit-transition: 0.4s linear;
   transition: 0.4s linear;
   -webkit-transition-property: width, background-color;
   transition-property: width, background-color;
 }
 
-.progress-bar2--indicator {
+.progress-bar--indicator {
   height: 0.625rem;
   width: 0.625rem;
-  border-radius: 30px;
+  border-radius: 50%;
   background-color: white;
   float: right;
   position: relative;
@@ -198,7 +233,7 @@ body {
   right: 1%;
 }
 
-.progress-moved .progress-bar2 {
+.progress-moved .progress-bar {
   width: 75%;
   background: -webkit-gradient(linear, left top, right top, from(#ffa197), to(#ff4a95));
   background: linear-gradient(90deg, #ffa197 0%, #ff4a95 100%);
@@ -236,5 +271,57 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 0.5rem;
+}
+
+@media (max-width: 675px) {
+  body {
+    background-image: url(../images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1rem;
+    max-width: 20.375rem;
+  }
+  .menu {
+    width: 100%;
+  }
+  .info {
+    text-align: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 100%;
+    padding: 2rem 2rem 3.25rem 2rem;
+  }
+  .info-limit {
+    top: 7.65rem;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    border-radius: 0.625rem;
+    max-width: 11.1875rem;
+  }
+}
+
+@media (max-width: 675px) and (max-width: 345px) {
+  .info-limit {
+    top: 8.65rem;
+  }
 }
 /*# sourceMappingURL=app.css.map */
