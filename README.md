@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Front End Mentor Solution](https://www.frontendmentor.io/solutions/equalizer-landing-page-ZeW6G_W-o)
+- Solution URL: [Front End Mentor Solution](https://www.frontendmentor.io/solutions/fylo-data-storage-component-responsive-Wo7jU9ciS)
 - Live Site URL: [Hosted on Github](https://chris971991.github.io/fylo-data-storage-component-master/)
 
 ## My process
